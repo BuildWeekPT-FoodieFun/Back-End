@@ -6,13 +6,13 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './data/xxxx.db3',
+      filename: './database/food.db3',
     },
     migrations: {
-      directory: './data/migrations'
+      directory: './database/migrations'
     },
     seeds: {
-      directory: './data/seeds'
+      directory: './database/seeds'
     },
     // needed when using foreign keys
     pool: {
@@ -22,7 +22,7 @@ module.exports = {
       },
     },
   },
-  
+
   staging: {
     client: 'postgresql',
     connection: {
