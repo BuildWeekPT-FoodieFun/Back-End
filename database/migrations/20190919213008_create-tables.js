@@ -1,15 +1,23 @@
 
 exports.up = function(knex) {
     return knex.schema
+    .createTable("users", table => {
+        table.increments();
+        table.string("username", 64)
+            .notNullable()
+            .unique();
+        table.string("password", 64)
+    })
+    
     .createTable("foodentries", table => {
         table.increments();
         table.text("item_name")
             .notNullable();
-        table.text("restaurant_name")
+        table.string("restaurant_name", 64)
             .notNullable();
         table.text("restaurant_type")
             .notNullable();
-        table.integer("rating")
+        table.integer("rating", 1)
             .unsigned()
             .notNullable();
         table.decimal("price", 6,2)
@@ -19,10 +27,18 @@ exports.up = function(knex) {
             .unsigned()
         table.date("date");
         table.blob("photo");
-    })  
+        table.integer("user_id")
+            .unsigned()
+            .notNullable()
+            .references("id")
+            .inTable("users")
+            .onUpdate("CASCADE")
+            .onDelete("CASCADE");
+    })
 };
 
 exports.down = function(knex) {
     return knex.schema
-    .dropTableIfExists("foodentries");  
+    .dropTableIfExists("foodentries")
+    .dropTableIfExists("users");  
 };
