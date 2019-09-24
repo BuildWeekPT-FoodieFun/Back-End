@@ -5,7 +5,7 @@ module.exports = {
     update,
     remove,
     find,
-    // findById,
+    findById,
     // findByRestaurant,
     // findByPrice,
     // findByType,
@@ -30,10 +30,10 @@ function find() {
     return db("foodentries")
 }
 
-// //Single food item by ID
-// function findById(id) {
-//     return db("foodentries").where({id}).first();
-// }
+//Single food item by ID
+function findById(id) {
+    return db("foodentries").where({id}).first();
+}
 
 // function findByRestaurant(restaurant) {
 

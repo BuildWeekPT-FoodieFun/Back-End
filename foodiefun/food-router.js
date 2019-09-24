@@ -14,24 +14,24 @@ router.get("/", (req, res) => {
     });
 });
 
-// router.get("/:id", (req, res) => {
-//     const {id} = req.params;
-//     Food.findById(id)
-//     .then(food => {
-//         if (food) {
-//             res.json(food);
-//         } else {
-//             res.status(404).json({
-//                 message: "Could not find food entry by given ID"
-//             });
-//         }
-//     })
-//     .catch(err => {
-//         res.status(500).json({
-//             message: "Failed to get food entry"
-//         });
-//     });
-// });
+router.get("/:id", (req, res) => {
+    const {id} = req.params;
+    Food.findById(id)
+    .then(food => {
+        if (food) {
+            res.json(food);
+        } else {
+            res.status(404).json({
+                message: "Could not find food entry by given ID"
+            });
+        }
+    })
+    .catch(err => {
+        res.status(500).json({
+            message: "Failed to get food entry"
+        });
+    });
+});
 
 router.post("/", (req, res) => {
     const foodData = req.body;
