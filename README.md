@@ -2,6 +2,12 @@
 
 # Routes
 
+Register
+POST /api/auth/register
+
+Login 
+POST /api/auth/login
+
 Get list of all food entries
 GET /api/app/
 
@@ -14,16 +20,8 @@ PUT /api/app
 Delete a food entry
 DELETE /api/app/:id
 
-# Not working yet
-
 Get single post by ID
 GET /api/app/:id
-
-Register
-POST /api/auth/register
-
-Login 
-POST /api/auth/login
 
 # Stretch *not created
 
