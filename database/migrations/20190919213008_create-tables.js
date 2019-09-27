@@ -29,7 +29,7 @@ exports.up = function(knex) {
         table.blob("photo");
         table.integer("user_id")
             .unsigned()
-            .notNullable()
+            // .notNullable()
             .references("id")
             .inTable("users")
             .onUpdate("CASCADE")
