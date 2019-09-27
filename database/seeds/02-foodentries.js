@@ -8,7 +8,6 @@ exports.seed = function(knex, Promise) {
       price: 10.00,
       comments: "Best burger ever!",
       date: 09/19/2019,
-      user_id: 1      
     },
     {
       item_name: "Italian Meat Lovers Pizza",
@@ -16,7 +15,6 @@ exports.seed = function(knex, Promise) {
       restaurant_type: "Brick Oven Pizza",
       rating: 5,
       comments: "Best pizza in Nashville",
-      user_id: 3
     },
     {
       item_name: "Chilli Cheese Fries",
@@ -25,7 +23,6 @@ exports.seed = function(knex, Promise) {
       rating: 3,
       comments: "At least it was cheap",
       price: 2.94,
-      user_id: 1
     },
   ]);
 };

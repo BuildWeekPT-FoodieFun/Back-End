@@ -92,4 +92,9 @@ router.delete("/:id", (req, res) => {
     })
 })
 
+// findByRestaurant
+// findByType
+// findByDate
+// findByRating
+
 module.exports = router;

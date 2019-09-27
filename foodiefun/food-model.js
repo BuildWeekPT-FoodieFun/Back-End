@@ -6,11 +6,11 @@ module.exports = {
     remove,
     find,
     findById,
-    // findByRestaurant,
+    findByRestaurant,
     // findByPrice,
-    // findByType,
-    // findByDate,
-    // findByRating    
+    findByType,
+    findByDate,
+    findByRating    
 }
 
 function add(foodentry) {
@@ -35,22 +35,22 @@ function findById(id) {
     return db("foodentries").where({id}).first();
 }
 
-// function findByRestaurant(restaurant) {
-
-// }
+function findByRestaurant(restaurant) {
+    return db("foodentries").where({ restaurant }).first();
+}
 
 // function findByPrice(price) {
 
 // }
 
-// function findByType(type) {
+function findByType(type) {
+    return db("foodentries").where({ type }).first();
+}
 
-// }
+function findByDate(date) {
+    return db("foodentries").where({ price }).first();
+}
 
-// function findByDate(date) {
-
-// }
-
-// function findByRating(rating) {
-
-// }
+function findByRating(rating) {
+    return db("foodentries").where({ rating }).first();
+}
